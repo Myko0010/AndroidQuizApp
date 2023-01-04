@@ -1,4 +1,4 @@
-package com.example.offlinequiz;
+package com.example.androidquizapp;
 
 
 
