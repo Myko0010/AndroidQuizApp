@@ -1,4 +1,4 @@
-package com.example.offlinequiz;
+package com.example.androidquizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
