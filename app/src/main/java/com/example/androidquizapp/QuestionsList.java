@@ -1,4 +1,4 @@
-package com.example.offlinequiz;
+package com.example.androidquizapp;
 
 public class QuestionsList {
     private String question, option1, option2, option3, option4, answer;
