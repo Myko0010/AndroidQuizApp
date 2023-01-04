@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else{
                     Intent intent = new Intent(MainActivity.this,QuizActivity.class);
-                    intent.putExtra("selected topic",selectedTopicName);
+                    intent.putExtra("Selected topic",selectedTopicName);
                     startActivity(intent);
                 }
             }
