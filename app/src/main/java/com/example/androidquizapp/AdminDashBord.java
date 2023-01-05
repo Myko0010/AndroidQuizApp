@@ -3,6 +3,7 @@ package com.example.androidquizapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -37,7 +38,9 @@ public class AdminDashBord extends AppCompatActivity {
         cardProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showToast("profile clicked");
+
+                Intent i = new Intent(AdminDashBord.this,Registration.class);
+                startActivity(i);
             }
         });
 
