@@ -1,4 +1,4 @@
-package com.example.admindashbord;
+package com.example.androidquizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -7,13 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class AdminDashBord extends AppCompatActivity {
     CardView cardHome,cardChat,cardProfile,cardWidget,cardSetting,cardLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_admin_dash_bord);
         cardHome=findViewById(R.id.cardHome);
         cardChat=findViewById(R.id.cardChat);
         cardProfile=findViewById(R.id.cardProfile);
