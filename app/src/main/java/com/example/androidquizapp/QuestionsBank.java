@@ -17,14 +17,14 @@ public class QuestionsBank extends LoginPage {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_question);
-        database2 = new Database(this);
+
     }
 
     private static List<QuestionsList> javaQuestions() {
 
         final List<QuestionsList> questionsLists = new ArrayList<>();
 
-        Cursor cursor=database2.GetSpecificQuestion("Chapter 1");
+        Cursor cursor=database2.GetSpecificQuestion("Chapter1");
         while(cursor.moveToNext()){
             String question=cursor.getString(2);
             String choiceA=cursor.getString(3);
