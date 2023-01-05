@@ -81,6 +81,8 @@ public class Database extends SQLiteOpenHelper {
         Cursor cursor=db.rawQuery("SELECT * FROM Questions " + "WHERE chapter = ?", new String[]{chapter});
         return cursor;
     }
-
+public Integer checkQuestion(String question){
+        return 0;
+}
 
 }

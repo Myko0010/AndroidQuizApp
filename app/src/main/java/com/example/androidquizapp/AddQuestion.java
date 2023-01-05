@@ -45,13 +45,13 @@ public class AddQuestion extends AppCompatActivity {
                     Toast.makeText(AddQuestion.this, "fields are required", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    int result=database.addQuestion();
+                    int result=database.checkQuestion(question1);
                     if(result>0){
                         Toast.makeText(AddQuestion.this,"Student Exists"
                                 ,Toast.LENGTH_LONG).show();
                     }
                     else{
-                        boolean sucessful= database.AddQuestion(question1,choiceA1,choiceB1,choiceC1,choiceD1,Answer1,Chapter1);
+                        boolean sucessful= database.addQuestion(Chapter1,question1,choiceA1,choiceB1,choiceC1,choiceD1,Answer1);
                         if(sucessful == false){
                             Toast.makeText(AddQuestion.this,"wrong"
                                     ,Toast.LENGTH_LONG).show();
