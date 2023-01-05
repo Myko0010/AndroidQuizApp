@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">AndroidQuizApp</string>
     <string-array name="department">
-        <item>cs</item>
-        <item>cs</item>
-        <item>cs</item>
-        <item>cs</item>
-        <item>cs</item>
-        <item>cs</item>
+        <item>Computer Science</item>
+        <item>Software Enginering</item>
+        <item>Information System</item>
+        <item>Information Science</item>
+        <item>Information Technology</item>
+        
     </string-array>
 </resources>
