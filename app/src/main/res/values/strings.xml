@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AndroidQuizApp</string>
+    <string-array name="department">
+        <item>cs</item>
+        <item>cs</item>
+        <item>cs</item>
+        <item>cs</item>
+        <item>cs</item>
+        <item>cs</item>
+    </string-array>
 </resources>
