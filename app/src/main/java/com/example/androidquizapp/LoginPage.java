@@ -13,6 +13,7 @@ public class LoginPage extends AppCompatActivity {
     EditText username;
     EditText password;
     Button loginButton;
+    Database database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,16 +21,30 @@ public class LoginPage extends AppCompatActivity {
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         loginButton = findViewById(R.id.loginButton);
+        database=new Database(this);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String user_name,pass_word;
+                user_name=username.getText().toString();
+                pass_word=password.getText().toString();
+                Integer int_password=Integer.parseInt(pass_word);
                 if (username.getText().toString().equals("user") && password.getText().toString().equals("1234")) {
                    Toast.makeText(LoginPage.this, "Login Successful!", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(LoginPage.this,AdminDashBord.class);
                     startActivity(i);
               } else {
-                   Toast.makeText(LoginPage.this, "Login Failed!", Toast.LENGTH_SHORT).show();
+
+                    int result=database.checkStudent(int_password);
+                    if(result>0){
+                        Intent i = new Intent(LoginPage.this,MainActivity.class);
+                        i.putExtra("Student uid",int_password);
+                        startActivity(i);
+                    }
+                    else{
+                        Toast.makeText(LoginPage.this, "incorrect user name or password", Toast.LENGTH_SHORT).show();
+                    }
                }
             }
         });

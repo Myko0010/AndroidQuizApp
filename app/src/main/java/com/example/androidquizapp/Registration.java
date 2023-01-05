@@ -2,6 +2,7 @@ package com.example.androidquizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -65,6 +66,8 @@ public class Registration extends AppCompatActivity {
                         else{
                             Toast.makeText(Registration.this,"sucess"
                                     ,Toast.LENGTH_LONG).show();
+                            Intent i = new Intent(Registration.this,AdminDashBord.class);
+                            startActivity(i);
                         }
                     }
                 }

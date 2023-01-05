@@ -60,6 +60,8 @@ public class AdminDashBord extends AppCompatActivity {
         cardLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent i = new Intent(AdminDashBord.this,LoginPage.class);
+                startActivity(i);
                 showToast("logout clicked");
             }
         });
