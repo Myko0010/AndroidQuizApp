@@ -1,4 +1,4 @@
-package com.example.admindashbord;
+package com.example.androidquizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class AdminDashBord extends AppCompatActivity {
     CardView cardHome,cardChat,cardProfile,cardWidget,cardSetting,cardLogout;
 
     @Override
