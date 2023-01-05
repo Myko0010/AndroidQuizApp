@@ -76,5 +76,11 @@ public class Database extends SQLiteOpenHelper {
         else return true;
     }
 
+    public Cursor GetSpecificQuestion(String chapter){
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor=db.rawQuery("SELECT * FROM Questions " + "WHERE chapter = ?", new String[]{chapter});
+        return cursor;
+    }
+
 
 }

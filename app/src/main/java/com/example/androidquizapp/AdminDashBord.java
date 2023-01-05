@@ -25,6 +25,9 @@ public class AdminDashBord extends AppCompatActivity {
         cardHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent i = new Intent(AdminDashBord.this,AddQuestion.class);
+                startActivity(i);
+
                 showToast("Home clicked");
             }
         });

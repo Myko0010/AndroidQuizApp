@@ -34,7 +34,7 @@ public class Registration extends AppCompatActivity {
 
         btn_register = findViewById(R.id.registerButton);
         Rggender=findViewById(R.id.rgGender);
-        database=new Database(this);
+        database=new Database(Registration.this);
 
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,4 +75,6 @@ public class Registration extends AppCompatActivity {
         });
 
     }
+
+
 }
