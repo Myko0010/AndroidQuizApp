@@ -129,14 +129,11 @@
                 android:inputType="number"
                 android:text="Register"
                 android:textSize="18sp"
-<<<<<<< HEAD
-                app:cornerRadius="20dp"
-                android:inputType="number"/>
+
+                app:cornerRadius="20dp"/>
 
 
-=======
-                app:cornerRadius="20dp" />
->>>>>>> 91a0582cce894728c96767bfb7f88ea471757239
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
