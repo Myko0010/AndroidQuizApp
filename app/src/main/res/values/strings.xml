@@ -1,14 +1,11 @@
 <resources>
     <string name="app_name">AndroidQuizApp</string>
-<<<<<<< HEAD
     <string-array name="department">
         <item>Computer Science</item>
         <item>Software Enginering</item>
         <item>Information System</item>
         <item>Information Science</item>
         <item>Information Technology</item>
-        
+
     </string-array>
-=======
->>>>>>> 5bcdf7bbf60aac4659e1de598b9f29b129ac91d9
 </resources>

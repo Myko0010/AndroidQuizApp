@@ -13,7 +13,7 @@ public class AdminDashBord extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_admin_dash_bord);
         cardHome=findViewById(R.id.cardHome);
         cardChat=findViewById(R.id.cardChat);
         cardProfile=findViewById(R.id.cardProfile);
