@@ -67,30 +67,34 @@
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
-                android:layout_marginTop="40dp"/>
+                android:layout_marginTop="40dp"
+                android:inputType="number"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Gender"
                 android:textSize="23sp"
                 android:layout_marginTop="8dp"/>
+
             <RadioGroup
                 android:id="@+id/rgGender"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/rbMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Male"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
+
                 <RadioButton
                     android:id="@+id/rbFemale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Female"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
 
             </RadioGroup>
 
@@ -119,6 +123,8 @@
                 android:textSize="18sp"
                 app:cornerRadius="20dp"
                 android:inputType="number"/>
+
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
