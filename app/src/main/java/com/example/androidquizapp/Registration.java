@@ -1,5 +1,4 @@
 package com.example.androidquizapp;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,11 +10,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 public class Registration extends AppCompatActivity {
 
     EditText First_Name,Last_Name,U_id;
-
     RadioGroup Rggender;
     RadioButton selected_gender;
     Button btn_register;
@@ -32,7 +29,7 @@ public class Registration extends AppCompatActivity {
         U_id = findViewById(R.id.uid);
         stud_department=findViewById(R.id.department);
 
-        btn_register = findViewById(R.id.registerButton);
+        btn_register = findViewById(R.id.searchButton);
         Rggender=findViewById(R.id.rgGender);
         database=new Database(Registration.this);
 
@@ -73,8 +70,5 @@ public class Registration extends AppCompatActivity {
                 }
             }
         });
-
     }
-
-
 }

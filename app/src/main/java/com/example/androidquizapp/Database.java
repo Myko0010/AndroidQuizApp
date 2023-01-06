@@ -137,4 +137,19 @@ public Integer checkQuestion(String question){
 
     }
 
+    public Cursor searchStudent(String uid){
+        SQLiteDatabase db=this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM student " + "WHERE chapter = ?",new String[] {uid});
+
+        return cursor;
+    }
+
+    public Integer deleteStudent(String id){
+
+        SQLiteDatabase db=this.getWritableDatabase();
+        return db.delete("student","Id = ?",new String[] {id});
+
+    }
+
+
 }
