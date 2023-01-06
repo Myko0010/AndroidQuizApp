@@ -19,6 +19,8 @@ public class Database extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE Questions(_ID INTEGER PRIMARY KEY AUTOINCREMENT, " + "chapter  TEXT, " + " question TEXT," +
                 "choiceA text,"+" choiceB TEXT,"+" choiceC TEXT,"+" choiceD TEXT,"+" correctAnswer TEXT);");
+        db.execSQL("CREATE TABLE QuizResult(student_uid  TEXT, " + " topic TEXT," +
+                "result text);");
     }
 
     @Override
@@ -26,6 +28,8 @@ public class Database extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS student;");
         onCreate(db);
         db.execSQL("DROP TABLE IF EXISTS Questions;");
+        onCreate(db);
+        db.execSQL("DROP TABLE IF EXISTS QuizResult;");
         onCreate(db);
     }
 
@@ -45,11 +49,25 @@ public class Database extends SQLiteOpenHelper {
         else return true;
     }
 
-    public int checkStudent(Integer username){
+    public int checkStudent(Integer password,String username){
+        String password2=password.toString();
         String username2=username.toString();
         SQLiteDatabase db=this.getReadableDatabase();
 
-        Cursor cursor=db.rawQuery("SELECT * FROM student " + "WHERE u_id = ?", new String[]{username2} );
+        Cursor cursor=db.rawQuery("SELECT * FROM student " + "WHERE u_id = ? AND first_name = ?" , new String[]{password2,username2} );
+        int num=cursor.getCount();
+
+        return num;
+
+    }
+
+
+    public int checkStudentForRegistration(Integer password){
+        String password2=password.toString();
+
+        SQLiteDatabase db=this.getReadableDatabase();
+
+        Cursor cursor=db.rawQuery("SELECT * FROM student " + "WHERE u_id = ? " , new String[]{password2} );
         int num=cursor.getCount();
 
         return num;
@@ -77,12 +95,46 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public Cursor GetSpecificQuestion(String chapter){
-        SQLiteDatabase db=this.getReadableDatabase();
+        SQLiteDatabase db=getReadableDatabase();
         Cursor cursor=db.rawQuery("SELECT * FROM Questions " + "WHERE chapter = ?", new String[]{chapter});
         return cursor;
     }
 public Integer checkQuestion(String question){
         return 0;
 }
+
+
+    public void AddResult(String s_uid,String topic,String result){
+        SQLiteDatabase db=this.getWritableDatabase();
+        ContentValues cv= new ContentValues();
+        cv.put("student_uid",s_uid);
+        cv.put("topic",topic);
+        cv.put("result",result);
+
+
+        long isSucess=db.insert("QuizResult",null,cv);
+
+    }
+
+    public String getResult(){
+        SQLiteDatabase db=getReadableDatabase();
+        Cursor cursor =db.query("QuizResult",new String[] {"student_uid","topic","result"},
+                null,null,null,null,null);
+
+        int Student_uid1=cursor.getColumnIndex("student_uid");
+        int topic1=cursor.getColumnIndex("topic");
+        int result1=cursor.getColumnIndex("result");
+
+        String res="";
+        for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()){
+            res=res+
+                    "Student UID  "+cursor.getString(Student_uid1)+"\n"+
+                    "    Chapter  "+cursor.getString(topic1)+"\n"+
+                    "QUIZ RESULT"+cursor.getString(result1)+"\n\n";
+        }
+        db.close();
+        return res;
+
+    }
 
 }

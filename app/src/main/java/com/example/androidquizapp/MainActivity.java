@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
         final Button starBtn = findViewById(R.id.startQuizBtn);
 
+        final String student_uid = getIntent().getStringExtra("Student uid");
+
         java.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     Intent intent = new Intent(MainActivity.this,QuizActivity.class);
                     intent.putExtra("Selected topic",selectedTopicName);
+                    intent.putExtra("Student uid",student_uid);
                     startActivity(intent);
                 }
             }

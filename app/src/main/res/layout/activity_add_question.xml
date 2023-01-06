@@ -27,13 +27,13 @@
 
             <TextView
                 android:id="@+id/addquestion"
-                android:layout_width="match_parent"
+                android:layout_width="298dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
                 android:text="ADD Question"
                 android:textAlignment="center"
                 android:textColor="@color/purple"
                 android:textSize="36sp"
-                android:layout_marginTop="18dp"
                 android:textStyle="bold" />
 
             <Spinner

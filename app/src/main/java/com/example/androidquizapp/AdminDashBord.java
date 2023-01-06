@@ -19,7 +19,7 @@ public class AdminDashBord extends AppCompatActivity {
         cardChat=findViewById(R.id.cardChat);
         cardProfile=findViewById(R.id.cardProfile);
         cardWidget=findViewById(R.id.cardWidget);
-        cardSetting=findViewById(R.id.cardSetting);
+        cardSetting=findViewById(R.id.cardSee);
         cardLogout=findViewById(R.id.cardLogout);
 
         cardHome.setOnClickListener(new View.OnClickListener() {
