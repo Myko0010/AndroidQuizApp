@@ -147,7 +147,7 @@ public Integer checkQuestion(String question){
     public Integer deleteStudent(String id){
 
         SQLiteDatabase db=this.getWritableDatabase();
-        return db.delete("student","Id = ?",new String[] {id});
+        return db.delete("student","u_id = ?",new String[] {id});
 
     }
 
