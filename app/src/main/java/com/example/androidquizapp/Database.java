@@ -116,4 +116,25 @@ public Integer checkQuestion(String question){
 
     }
 
+    public String getResult(){
+        SQLiteDatabase db=getReadableDatabase();
+        Cursor cursor =db.query("QuizResult",new String[] {"student_uid","topic","result"},
+                null,null,null,null,null);
+
+        int Student_uid1=cursor.getColumnIndex("student_uid");
+        int topic1=cursor.getColumnIndex("topic");
+        int result1=cursor.getColumnIndex("result");
+
+        String res="";
+        for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()){
+            res=res+
+                    "Student UID  "+cursor.getString(Student_uid1)+"\n"+
+                    "    Chapter  "+cursor.getString(topic1)+"\n"+
+                    "QUIZ RESULT"+cursor.getString(result1)+"\n\n";
+        }
+        db.close();
+        return res;
+
+    }
+
 }
