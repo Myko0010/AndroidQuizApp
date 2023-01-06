@@ -36,7 +36,7 @@ public class LoginPage extends AppCompatActivity {
                     startActivity(i);
               } else {
 
-                    int result=database.checkStudent(int_password);
+                    int result=database.checkStudent(int_password,user_name);
                     if(result>0){
                         Intent i = new Intent(LoginPage.this,MainActivity.class);
                         i.putExtra("Student uid",int_password);

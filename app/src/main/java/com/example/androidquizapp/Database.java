@@ -19,6 +19,8 @@ public class Database extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE Questions(_ID INTEGER PRIMARY KEY AUTOINCREMENT, " + "chapter  TEXT, " + " question TEXT," +
                 "choiceA text,"+" choiceB TEXT,"+" choiceC TEXT,"+" choiceD TEXT,"+" correctAnswer TEXT);");
+        db.execSQL("CREATE TABLE QuizResult(_ID INTEGER PRIMARY KEY AUTOINCREMENT, " + "chapter  TEXT, " + " question TEXT," +
+                "choiceA text,"+" choiceB TEXT,"+" choiceC TEXT,"+" choiceD TEXT,"+" correctAnswer TEXT);");
     }
 
     @Override
@@ -45,11 +47,25 @@ public class Database extends SQLiteOpenHelper {
         else return true;
     }
 
-    public int checkStudent(Integer username){
+    public int checkStudent(Integer password,String username){
+        String password2=password.toString();
         String username2=username.toString();
         SQLiteDatabase db=this.getReadableDatabase();
 
-        Cursor cursor=db.rawQuery("SELECT * FROM student " + "WHERE u_id = ?", new String[]{username2} );
+        Cursor cursor=db.rawQuery("SELECT * FROM student " + "WHERE u_id = ? AND first_name = ?" , new String[]{password2,username2} );
+        int num=cursor.getCount();
+
+        return num;
+
+    }
+
+
+    public int checkStudentForRegistration(Integer password){
+        String password2=password.toString();
+
+        SQLiteDatabase db=this.getReadableDatabase();
+
+        Cursor cursor=db.rawQuery("SELECT * FROM student " + "WHERE u_id = ? " , new String[]{password2} );
         int num=cursor.getCount();
 
         return num;

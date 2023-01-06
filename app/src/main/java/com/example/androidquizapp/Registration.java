@@ -52,7 +52,7 @@ public class Registration extends AppCompatActivity {
                     Toast.makeText(Registration.this, "FIELDS ARE REQUIRED", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    int result=database.checkStudent(integer_uid);
+                    int result=database.checkStudentForRegistration(integer_uid);
                     if(result>0){
                         Toast.makeText(Registration.this,"Student Exists"
                                 ,Toast.LENGTH_LONG).show();
