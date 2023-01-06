@@ -33,7 +33,6 @@ public class QuizResults extends AppCompatActivity {
             }
         });
     }
-
     @Override
     public void onBackPressed() {
         startActivity(new Intent(QuizResults.this, MainActivity.class));

@@ -13,4 +13,5 @@
     <color name="colorPurple">#4a148c</color>
     <color name="colorPrimary">#4a148c</color>
     <color name="colorPrimaryDark">#4a148c</color>
+    <color name="colorRed">#FF0000</color>
 </resources>
