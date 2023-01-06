@@ -19,8 +19,8 @@ public class Database extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE Questions(_ID INTEGER PRIMARY KEY AUTOINCREMENT, " + "chapter  TEXT, " + " question TEXT," +
                 "choiceA text,"+" choiceB TEXT,"+" choiceC TEXT,"+" choiceD TEXT,"+" correctAnswer TEXT);");
-        db.execSQL("CREATE TABLE QuizResult(_ID INTEGER PRIMARY KEY AUTOINCREMENT, " + "chapter  TEXT, " + " question TEXT," +
-                "choiceA text,"+" choiceB TEXT,"+" choiceC TEXT,"+" choiceD TEXT,"+" correctAnswer TEXT);");
+        db.execSQL("CREATE TABLE QuizResult(student_uid  TEXT, " + " topic TEXT," +
+                "result text);");
     }
 
     @Override
@@ -28,6 +28,8 @@ public class Database extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS student;");
         onCreate(db);
         db.execSQL("DROP TABLE IF EXISTS Questions;");
+        onCreate(db);
+        db.execSQL("DROP TABLE IF EXISTS QuizResult;");
         onCreate(db);
     }
 
@@ -100,5 +102,18 @@ public class Database extends SQLiteOpenHelper {
 public Integer checkQuestion(String question){
         return 0;
 }
+
+
+    public void AddResult(String s_uid,String topic,String result){
+        SQLiteDatabase db=this.getWritableDatabase();
+        ContentValues cv= new ContentValues();
+        cv.put("student_uid",s_uid);
+        cv.put("topic",topic);
+        cv.put("result",result);
+
+
+        long isSucess=db.insert("QuizResult",null,cv);
+
+    }
 
 }

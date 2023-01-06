@@ -32,6 +32,8 @@ public class QuizActivity extends AppCompatActivity {
 
     private int currentQuestionPosition = 0;
     private String selectedOptionByUser = "";
+    private String student_uid;
+    private String getSelectedTopicName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +56,8 @@ public class QuizActivity extends AppCompatActivity {
         nextBtn = findViewById(R.id.nextBtn);
 
 
-        final String getSelectedTopicName = getIntent().getStringExtra("Selected topic");
+        getSelectedTopicName = getIntent().getStringExtra("Selected topic");
+        student_uid = getIntent().getStringExtra("Student uid");
         selectedTopicName.setText(getSelectedTopicName);
 
         questionsLists = QuestionsBank.getQuestions(getSelectedTopicName);
@@ -177,6 +180,8 @@ public class QuizActivity extends AppCompatActivity {
             Intent intent = new Intent(QuizActivity.this, QuizResults.class);
             intent.putExtra("correct", getCorrectAnswers());
             intent.putExtra("incorrect", getInCorrectAnswers());
+            intent.putExtra("Student uid",student_uid);
+            intent.putExtra("Selected topic",getSelectedTopicName);
             startActivity(intent);
             finish();
         }
@@ -198,6 +203,9 @@ public class QuizActivity extends AppCompatActivity {
                     Intent intent = new Intent(QuizActivity.this,QuizResults.class);
                     intent.putExtra("correct",getCorrectAnswers());
                     intent.putExtra("incorrect",getInCorrectAnswers());
+                    intent.putExtra("Student uid",student_uid);
+                    intent.putExtra("Selected topic",getSelectedTopicName);
+
                     startActivity(intent);
 
                     finish();
