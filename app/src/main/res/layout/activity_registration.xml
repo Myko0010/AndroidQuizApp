@@ -8,8 +8,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:src="@drawable/bb"
-    tools:context=".Registration">
+    android:background="@drawable/bb"
+    tools:context=".MainActivity">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -121,7 +121,7 @@
                 android:entries="@array/department" />
 
             <Button
-                android:id="@+id/searchButton"
+                android:id="@+id/registerButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -132,10 +132,7 @@
                 android:textSize="18sp"
 
 
-                app:cornerRadius="20dp"
-              />
-
-
+                app:cornerRadius="20dp" />
 
 
         </LinearLayout>
