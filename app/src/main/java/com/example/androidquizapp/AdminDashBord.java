@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 public class AdminDashBord extends AppCompatActivity {
+    Database database;
     CardView cardHome,cardChat,cardProfile,cardWidget,cardSetting,cardLogout;
 
     @Override
@@ -21,6 +22,7 @@ public class AdminDashBord extends AppCompatActivity {
         cardWidget=findViewById(R.id.cardWidget);
         cardSetting=findViewById(R.id.cardSee);
         cardLogout=findViewById(R.id.cardLogout);
+        database=new Database(this);
 
         cardHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +59,14 @@ public class AdminDashBord extends AppCompatActivity {
         cardSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showToast("setting clicked");
+
+                String data=database.getResult();
+                if(data.equals("")){
+                    Toast.makeText(AdminDashBord.this, "There is no result", Toast.LENGTH_SHORT).show();
+                }else{
+                  Intent intent =new Intent(AdminDashBord.this,seeResult.class);
+                  startActivity(intent);
+                }
             }
         });
         cardLogout.setOnClickListener(new View.OnClickListener() {
