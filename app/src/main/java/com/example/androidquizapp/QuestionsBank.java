@@ -50,12 +50,12 @@ public class QuestionsBank extends LoginPage {
         }
 
 
-<<<<<<< HEAD
+
         final QuestionsList question1 = new QuestionsList("1, Android is -", "A. an operating system", "B.  a web browser", "C. a web browser", "D. None", "A. an operating system", "");
         final QuestionsList question2 = new QuestionsList("2, For which of the following Android is mainly developed?", "A.  for Servers", "B. for Dektops", "C. for laptops", "D. for mobile devices", "D. for mobile devices", "");
-        final QuestionsList question3 = new QuestionsList("3,  Which of the following virtual machine is used by the Android operating system?", "A. JVM", "B. DVM", "C. Simple virtual machine", "D None", "B. DVM", "");
-        final QuestionsList question4 = new QuestionsList("4, What does API stand for?", "A. Application Programming Interface", "B. Android Programming Interface", "C. Android Page Interface", "D Application Page Interface", "A. Application Programming Interface", "");
-        final QuestionsList question5 = new QuestionsList("5, Which of the following converts Java byte code into Dalvik byte code?", "A. Dalvik converter", "B. Dex compiler", "C Mobile interpretive compiler (MIC)", "D None", "B. Dex compiler", "");
+        final QuestionsList question3 = new QuestionsList("3,  Which of the following virtual machine is used by the Android operating system?", "A. JVM", "B. DVM", "C. Simple virtual machine", "D. None", "B. DVM", "");
+        final QuestionsList question4 = new QuestionsList("4, What does API stand for?", "A. Application Programming Interface", "B. Android Programming Interface", "C. Android Page Interface", "D. Application Page Interface", "A. Application Programming Interface", "");
+        final QuestionsList question5 = new QuestionsList("5, Which of the following converts Java byte code into Dalvik byte code?", "A. Dalvik converter", "B. Dex compiler", "C. Mobile interpretive compiler (MIC)", "D None", "B. Dex compiler", "");
         final QuestionsList question6 = new QuestionsList("6, What is an activity in android?", "A android class", "B. android package", "C. A single screen in an application with supporting java code", "D none", "C. A single screen in an application with supporting java code", "");
         questionsLists.add(question1);
         questionsLists.add(question2);
@@ -63,8 +63,6 @@ public class QuestionsBank extends LoginPage {
         questionsLists.add(question4);
         questionsLists.add(question5);
         questionsLists.add(question6);
-=======
->>>>>>> 53304b85baeb8e9c69a6924599b86d5b523ef754
 
         return questionsLists;
 
@@ -72,12 +70,12 @@ public class QuestionsBank extends LoginPage {
     private static List<QuestionsList> phpQuestions() {
         final List<QuestionsList> questionsLists = new ArrayList<>();
 
-        final QuestionsList question1 = new QuestionsList("a", "b", "c", "d", "e", "b", "");
-        final QuestionsList question2 = new QuestionsList("a", "b", "c", "d", "e", "b", "");
-        final QuestionsList question3 = new QuestionsList("a", "b", "c", "d", "e", "b", "");
-        final QuestionsList question4 = new QuestionsList("a", "b", "c", "d", "e", "b", "");
-        final QuestionsList question5 = new QuestionsList("a", "b", "c", "d", "e", "b", "");
-        final QuestionsList question6 = new QuestionsList("a", "b", "c", "d", "e", "b", "");
+        final QuestionsList question1 = new QuestionsList("1, Android is -", "A. an operating system", "B.  a web browser", "C. a web browser", "D. None", "A. an operating system", "");
+        final QuestionsList question2 = new QuestionsList("2, For which of the following Android is mainly developed?", "A.  for Servers", "B. for Dektops", "C. for laptops", "D. for mobile devices", "D. for mobile devices", "");
+        final QuestionsList question3 = new QuestionsList("3,  Which of the following virtual machine is used by the Android operating system?", "A. JVM", "B. DVM", "C. Simple virtual machine", "D. None", "B. DVM", "");
+        final QuestionsList question4 = new QuestionsList("4, What does API stand for?", "A. Application Programming Interface", "B. Android Programming Interface", "C. Android Page Interface", "D. Application Page Interface", "A. Application Programming Interface", "");
+        final QuestionsList question5 = new QuestionsList("5, Which of the following converts Java byte code into Dalvik byte code?", "A. Dalvik converter", "B. Dex compiler", "C. Mobile interpretive compiler (MIC)", "D None", "B. Dex compiler", "");
+        final QuestionsList question6 = new QuestionsList("6, What is an activity in android?", "A android class", "B. android package", "C. A single screen in an application with supporting java code", "D none", "C. A single screen in an application with supporting java code", "");
         questionsLists.add(question1);
         questionsLists.add(question2);
         questionsLists.add(question3);
