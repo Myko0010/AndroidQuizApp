@@ -86,7 +86,7 @@ public class AdminDashBord extends AppCompatActivity {
 
                 AlertDialog.Builder builder;
                 builder = new AlertDialog.Builder(AdminDashBord.this);
-                builder.setMessage("Are you sure you want to exit?")
+                builder.setMessage("Are you sure you want to LogOut?")
                         .setCancelable(false)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {

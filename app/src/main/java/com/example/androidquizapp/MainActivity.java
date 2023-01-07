@@ -16,67 +16,74 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         final LinearLayout java = findViewById(R.id.javaLayout);
         final LinearLayout php = findViewById(R.id.phpLayout);
         final LinearLayout html = findViewById(R.id.htmlLayout);
         final LinearLayout android = findViewById(R.id.androidLayout);
         database=new Database(this);
 
+        final LinearLayout Chapter1 = findViewById(R.id.javaLayout);
+        final LinearLayout Chapter2 = findViewById(R.id.phpLayout);
+        final LinearLayout Chapter3 = findViewById(R.id.htmlLayout);
+        final LinearLayout Chapter4 = findViewById(R.id.androidLayout);
+
+
         final Button starBtn = findViewById(R.id.startQuizBtn);
 
         final String student_uid = getIntent().getStringExtra("Student uid");
 
-        java.setOnClickListener(new View.OnClickListener() {
+        Chapter1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                selectedTopicName = "java";
+                selectedTopicName = "Chapter1";
 
-                java.setBackgroundResource(R.drawable.round_back_whitestroke10);
+                Chapter1.setBackgroundResource(R.drawable.round_back_whitestroke10);
 
-                php.setBackgroundResource(R.drawable.round_back_white10);
-                html.setBackgroundResource(R.drawable.round_back_white10);
-                android.setBackgroundResource(R.drawable.round_back_white10);
+                Chapter2.setBackgroundResource(R.drawable.round_back_white10);
+                Chapter3.setBackgroundResource(R.drawable.round_back_white10);
+                Chapter4.setBackgroundResource(R.drawable.round_back_white10);
 
             }
         });
-        php.setOnClickListener(new View.OnClickListener() {
+        Chapter2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectedTopicName = "php";
+                selectedTopicName = "Chapter2";
 
-                php.setBackgroundResource(R.drawable.round_back_whitestroke10);
+                Chapter2.setBackgroundResource(R.drawable.round_back_whitestroke10);
 
-                java.setBackgroundResource(R.drawable.round_back_white10);
-                html.setBackgroundResource(R.drawable.round_back_white10);
-                android.setBackgroundResource(R.drawable.round_back_white10);
+                Chapter1.setBackgroundResource(R.drawable.round_back_white10);
+                Chapter3.setBackgroundResource(R.drawable.round_back_white10);
+                Chapter4.setBackgroundResource(R.drawable.round_back_white10);
             }
 
         });
 
-        html.setOnClickListener(new View.OnClickListener() {
+        Chapter3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedTopicName = "html";
+                selectedTopicName = "Chapter3";
 
-                html.setBackgroundResource(R.drawable.round_back_whitestroke10);
+                Chapter3.setBackgroundResource(R.drawable.round_back_whitestroke10);
 
-                php.setBackgroundResource(R.drawable.round_back_white10);
-                java.setBackgroundResource(R.drawable.round_back_white10);
-                android.setBackgroundResource(R.drawable.round_back_white10);
+                Chapter2.setBackgroundResource(R.drawable.round_back_white10);
+                Chapter1.setBackgroundResource(R.drawable.round_back_white10);
+                Chapter4.setBackgroundResource(R.drawable.round_back_white10);
             }
         });
 
-        android.setOnClickListener(new View.OnClickListener() {
+        Chapter4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                selectedTopicName = "android";
-                android.setBackgroundResource(R.drawable.round_back_whitestroke10);
+                selectedTopicName = "Chapter4";
+                Chapter4.setBackgroundResource(R.drawable.round_back_whitestroke10);
 
-                php.setBackgroundResource(R.drawable.round_back_white10);
-                java.setBackgroundResource(R.drawable.round_back_white10);
-                java.setBackgroundResource(R.drawable.round_back_white10);
+                Chapter2.setBackgroundResource(R.drawable.round_back_white10);
+                Chapter1.setBackgroundResource(R.drawable.round_back_white10);
+                Chapter3.setBackgroundResource(R.drawable.round_back_white10);
             }
 
         });
