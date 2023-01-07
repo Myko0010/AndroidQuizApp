@@ -18,6 +18,7 @@ public class QuestionsBank extends LoginPage {
 
 
     private static List<QuestionsList> javaQuestions() {
+        final List<QuestionsList> questionsLists = new ArrayList<>();
         
         final QuestionsList question1 = new QuestionsList("1, Android is -", "A. an operating system", "B.  a web browser", "C. a web browser", "D. None", "A. an operating system", "");
         final QuestionsList question2 = new QuestionsList("2, For which of the following Android is mainly developed?", "A.  for Servers", "B. for Dektops", "C. for laptops", "D. for mobile devices", "D. for mobile devices", "");
