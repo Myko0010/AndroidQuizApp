@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private String selectedTopicName = "";
+     String selectedTopicName = "";
     Database database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
         final Button starBtn = findViewById(R.id.startQuizBtn);
 
-        final String student_uid = getIntent().getStringExtra("Student uid");
+         String student_uid = getIntent().getStringExtra("Student uid");
+        selectedTopicName=getIntent().getStringExtra("Selected topic");
 
         Chapter1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,11 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else{
 
-
-
-
-
-                    int result=database.checkQuizStatus(selectedTopicName,student_uid);
+                    Integer result=database.checkQuizStatus(selectedTopicName,student_uid);
                     if(result>0){
                         Toast.makeText(MainActivity.this,"You have already taken this quiz!", Toast.LENGTH_SHORT).show();
                     }else{

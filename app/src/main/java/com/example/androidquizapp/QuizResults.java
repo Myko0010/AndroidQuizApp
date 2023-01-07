@@ -36,7 +36,11 @@ public class QuizResults extends AppCompatActivity {
         startNewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(QuizResults.this, MainActivity.class));
+                Intent i = new Intent(QuizResults.this,MainActivity.class);
+                i.putExtra("Selected topic",selected_topic);
+                i.putExtra("Student uid",student_uid);
+                startActivity(i);
+
                 finish();
             }
         });

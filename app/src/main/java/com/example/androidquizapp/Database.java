@@ -151,10 +151,10 @@ public Integer checkQuestion(String question){
 
     }
 
-    public int checkQuizStatus(String chapter,String u_id){
+    public Integer checkQuizStatus(String chapter,String u_id){
         SQLiteDatabase db=this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM QuizResult " + "WHERE student_uid = ? AND topic= ?",new String[] {u_id,chapter});
-        int result=cursor.getCount();
+        Integer result=cursor.getCount();
         return result;
 
     }

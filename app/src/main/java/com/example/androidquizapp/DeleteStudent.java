@@ -1,7 +1,10 @@
 package com.example.androidquizapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -50,20 +53,42 @@ public class DeleteStudent extends AppCompatActivity {
         });
 
         delete_Button.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View view) {
-            Integer deleteStud = database.deleteStudent(stud_Uid.getText().toString());
 
-            if(deleteStud > 0){
-                Toast.makeText(DeleteStudent.this, "Data is deleted!", Toast.LENGTH_SHORT).show();
-                stud_firstName.setText("");
-                stud_department.setText("");
-                stud_Uid.setText("");
+                AlertDialog.Builder builder;
+                builder = new AlertDialog.Builder(DeleteStudent.this);
+                builder.setMessage("Are you sure do you want to delete?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
 
-            }
-            else {
-                Toast.makeText(DeleteStudent.this, "Something is wrong", Toast.LENGTH_SHORT).show();
-            }
+                                Integer deleteStud = database.deleteStudent(stud_Uid.getText().toString());
+
+                                if(deleteStud > 0){
+                                    Toast.makeText(DeleteStudent.this, "Data is deleted!", Toast.LENGTH_SHORT).show();
+                                    stud_firstName.setText("");
+                                    stud_department.setText("");
+                                    stud_Uid.setText("");
+
+                                }
+                                else {
+                                    Toast.makeText(DeleteStudent.this, "Something is wrong", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+
+
+                        });
+                AlertDialog alertDialog=builder.create();
+                alertDialog.show();
+
             }
         });
 
