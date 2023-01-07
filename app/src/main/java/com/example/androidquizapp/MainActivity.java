@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                    
+
 
                     int result=database.checkQuizStatus(selectedTopicName,student_uid);
                     if(result>0){
