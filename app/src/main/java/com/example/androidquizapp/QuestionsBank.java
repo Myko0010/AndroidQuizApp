@@ -60,7 +60,7 @@ public class QuestionsBank extends LoginPage {
     private static List<QuestionsList> phpQuestions() {
         final List<QuestionsList> questionsLists = new ArrayList<>();
 
-        final QuestionsList question1 = new QuestionsList("1, Android is -", "A. an operating system", "B.  a web browser", "C. a web browser", "D. None", "A. an operating system", "");
+        final QuestionsList question1 = new QuestionsList("1, We require an AVD to create an emulator. What does AVD stand for?", "A. Android Virtual device", "B. Android Virtual display", "C. Active Virtual display", "D. Active Virtual device", "A. Android Virtual device", "");
         final QuestionsList question2 = new QuestionsList("2, For which of the following Android is mainly developed?", "A.  for Servers", "B. for Dektops", "C. for laptops", "D. for mobile devices", "D. for mobile devices", "");
         final QuestionsList question3 = new QuestionsList("3,  Which of the following virtual machine is used by the Android operating system?", "A. JVM", "B. DVM", "C. Simple virtual machine", "D. None", "B. DVM", "");
         final QuestionsList question4 = new QuestionsList("4, What does API stand for?", "A. Application Programming Interface", "B. Android Programming Interface", "C. Android Page Interface", "D. Application Page Interface", "A. Application Programming Interface", "");
@@ -96,7 +96,7 @@ public class QuestionsBank extends LoginPage {
     private static List<QuestionsList> androidQuestions() {
         final List<QuestionsList> questionsLists = new ArrayList<>();
 
-        final QuestionsList question1 = new QuestionsList("1, Android is -", "A. an operating system", "B.  a web browser", "C. a web browser", "D. None", "A. an operating system", "");
+        final QuestionsList question1 = new QuestionsList("1, Which of the following kernel is used in Android?", "A. MAC", "B.  Windows", "C. Linux", "D. Redhat", "C. Linux", "");
         final QuestionsList question2 = new QuestionsList("2, For which of the following Android is mainly developed?", "A.  for Servers", "B. for Dektops", "C. for laptops", "D. for mobile devices", "D. for mobile devices", "");
         final QuestionsList question3 = new QuestionsList("3,  Which of the following virtual machine is used by the Android operating system?", "A. JVM", "B. DVM", "C. Simple virtual machine", "D. None", "B. DVM", "");
         final QuestionsList question4 = new QuestionsList("4, What does API stand for?", "A. Application Programming Interface", "B. Android Programming Interface", "C. Android Page Interface", "D. Application Page Interface", "A. Application Programming Interface", "");
