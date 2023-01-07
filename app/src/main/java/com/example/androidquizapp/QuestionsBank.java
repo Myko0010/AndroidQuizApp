@@ -17,7 +17,7 @@ public class QuestionsBank extends LoginPage {
     }
 
 
-    private static List<QuestionsList> javaQuestions() {
+    private static List<QuestionsList> chapter1Questions() {
 
         final List<QuestionsList> questionsLists = new ArrayList<>();
         
@@ -38,7 +38,7 @@ public class QuestionsBank extends LoginPage {
         return questionsLists;
 
     }
-    private static List<QuestionsList> phpQuestions() {
+    private static List<QuestionsList> chapter2Questions() {
         final List<QuestionsList> questionsLists = new ArrayList<>();
 
         final QuestionsList question1 = new QuestionsList("1, We require an AVD to create an emulator. What does AVD stand for?", "A. Android Virtual device", "B. Android Virtual display", "C. Active Virtual display", "D. Active Virtual device", "A. Android Virtual device", "");
@@ -56,7 +56,7 @@ public class QuestionsBank extends LoginPage {
 
         return questionsLists;
     }
-    private static List<QuestionsList> htmlQuestions() {
+    private static List<QuestionsList> chapter3Questions() {
         final List<QuestionsList> questionsLists = new ArrayList<>();
 
         final QuestionsList question1 = new QuestionsList("1, Android is -", "A. an operating system", "B.  a web browser", "C. a web browser", "D. None", "A. an operating system", "");
@@ -74,7 +74,7 @@ public class QuestionsBank extends LoginPage {
 
         return questionsLists;
     }
-    private static List<QuestionsList> androidQuestions() {
+    private static List<QuestionsList> chapter4Questions() {
         final List<QuestionsList> questionsLists = new ArrayList<>();
 
         final QuestionsList question1 = new QuestionsList("1, Which of the following kernel is used in Android?", "A. MAC", "B.  Windows", "C. Linux", "D. Redhat", "C. Linux", "");
@@ -100,13 +100,13 @@ public class QuestionsBank extends LoginPage {
     public static List<QuestionsList> getQuestions(String selectedTopicName){
         switch (selectedTopicName){
             case "Chapter1":
-                return javaQuestions();
+                return chapter1Questions();
             case "Chapter2":
-                return phpQuestions();
+                return chapter2Questions();
             case "Chapter4":
-                return androidQuestions();
+                return chapter4Questions();
             default:
-                return htmlQuestions();
+                return chapter3Questions();
         }
     }
 
