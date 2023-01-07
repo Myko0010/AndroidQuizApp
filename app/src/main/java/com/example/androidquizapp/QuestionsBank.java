@@ -115,11 +115,11 @@ public class QuestionsBank extends LoginPage {
      */
     public static List<QuestionsList> getQuestions(String selectedTopicName){
         switch (selectedTopicName){
-            case "java":
+            case "Chapter1":
                 return javaQuestions();
-            case "php":
+            case "Chapter2":
                 return phpQuestions();
-            case "android":
+            case "Chapter4":
                 return androidQuestions();
             default:
                 return htmlQuestions();

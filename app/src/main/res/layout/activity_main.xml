@@ -54,13 +54,13 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/java_icon" />
+                android:src="@drawable/chapter1" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Java"
+                android:text="Chapter 1"
                 android:textColor="#CC000000"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -82,13 +82,13 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/php_icon" />
+                android:src="@drawable/chapter2" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="PHP"
+                android:text="Chapter 2"
                 android:textColor="#CC000000"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -121,13 +121,13 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/html_icon" />
+                android:src="@drawable/chapter3" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="HTML"
+                android:text="Chapter 3"
                 android:textColor="#CC000000"
                 android:textSize="15sp"
                 android:textStyle="bold"
@@ -149,13 +149,13 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/android_icon" />
+                android:src="@drawable/chapter4" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Android"
+                android:text="Chapter 4"
                 android:textColor="#CC000000"
                 android:textSize="15sp"
                 android:textStyle="bold"
