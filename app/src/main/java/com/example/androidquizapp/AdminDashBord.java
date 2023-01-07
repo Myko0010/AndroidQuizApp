@@ -37,7 +37,13 @@ public class AdminDashBord extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
+                Intent i = new Intent(AdminDashBord.this,DeleteStudent.class);
+                startActivity(i);
+
+
                 showToast("Chat clicked");
+
             }
         });
 

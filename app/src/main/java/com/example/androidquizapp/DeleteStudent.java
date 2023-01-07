@@ -38,11 +38,13 @@ public class DeleteStudent extends AppCompatActivity {
                 }
 
                 else{
-                    String first_Name,department;
-                    first_Name = cursor.getString(1);
-                    department = cursor.getString(5);
-                    stud_firstName.setText(first_Name);
-                    stud_department.setText(department);
+                    while (cursor.moveToNext()) {
+                        String first_Name, department;
+                        first_Name = "" + cursor.getString(1);
+                        department = cursor.getString(5);
+                        stud_firstName.setText(first_Name);
+                        stud_department.setText(department);
+                    }
                 }
             }
         });
@@ -54,6 +56,10 @@ public class DeleteStudent extends AppCompatActivity {
 
             if(deleteStud > 0){
                 Toast.makeText(DeleteStudent.this, "Data is deleted!", Toast.LENGTH_SHORT).show();
+                stud_firstName.setText("");
+                stud_department.setText("");
+                stud_Uid.setText("");
+
             }
             else {
                 Toast.makeText(DeleteStudent.this, "Something is wrong", Toast.LENGTH_SHORT).show();
