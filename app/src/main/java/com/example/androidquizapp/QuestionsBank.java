@@ -1,7 +1,5 @@
 package com.example.androidquizapp;
 
-
-
 import android.database.Cursor;
 import android.os.Bundle;
 
@@ -10,20 +8,12 @@ import java.util.List;
 
 public class QuestionsBank extends LoginPage {
 
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_question);
 
        // database2=new Database(this);
-
-
-
     }
     public Cursor getinet(){
         Database database2=new Database(this);
