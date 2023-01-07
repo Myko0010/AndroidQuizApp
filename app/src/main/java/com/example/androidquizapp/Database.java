@@ -138,7 +138,7 @@ public Integer checkQuestion(String question){
     }
 
     public Cursor searchStudent(String uid){
-        SQLiteDatabase db=this.getWritableDatabase();
+        SQLiteDatabase db=this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM student " + "WHERE u_id = ?",new String[] {uid});
 
         return cursor;
@@ -148,6 +148,14 @@ public Integer checkQuestion(String question){
 
         SQLiteDatabase db=this.getWritableDatabase();
         return db.delete("student","u_id = ?",new String[] {id});
+
+    }
+
+    public int checkQuizStatus(String chapter,String u_id){
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM QuizResult " + "WHERE student_uid = ? AND topic= ?",new String[] {u_id,chapter});
+        int result=cursor.getCount();
+        return result;
 
     }
 
