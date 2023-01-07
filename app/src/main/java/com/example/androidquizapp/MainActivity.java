@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private String selectedTopicName = "";
+    Database database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         final LinearLayout php = findViewById(R.id.phpLayout);
         final LinearLayout html = findViewById(R.id.htmlLayout);
         final LinearLayout android = findViewById(R.id.androidLayout);
+        database=new Database(this);
 
         final Button starBtn = findViewById(R.id.startQuizBtn);
 
@@ -85,10 +87,17 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this,"please select the topic", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Intent intent = new Intent(MainActivity.this,QuizActivity.class);
-                    intent.putExtra("Selected topic",selectedTopicName);
-                    intent.putExtra("Student uid",student_uid);
-                    startActivity(intent);
+                    int result=database.checkQuizStatus(selectedTopicName,student_uid);
+                    if(result>0){
+                        Toast.makeText(MainActivity.this,"You have already taken this quiz!", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Intent intent = new Intent(MainActivity.this,QuizActivity.class);
+                        intent.putExtra("Selected topic",selectedTopicName);
+                        intent.putExtra("Student uid",student_uid);
+                        startActivity(intent);
+                    }
+
+
                 }
             }
         });
