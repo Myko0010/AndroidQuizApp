@@ -29,7 +29,7 @@ public class Registration extends AppCompatActivity {
         U_id = findViewById(R.id.uid);
         stud_department=findViewById(R.id.department);
 
-        btn_register = findViewById(R.id.searchButton);
+        btn_register = findViewById(R.id.registerButton);
         Rggender=findViewById(R.id.rgGender);
         database=new Database(Registration.this);
 

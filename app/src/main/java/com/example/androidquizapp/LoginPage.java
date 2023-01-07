@@ -3,6 +3,7 @@ package com.example.androidquizapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -39,7 +40,7 @@ public class LoginPage extends AppCompatActivity {
                     int result=database.checkStudent(int_password,user_name);
                     if(result>0){
                         Intent i = new Intent(LoginPage.this,MainActivity.class);
-                        i.putExtra("Student uid",int_password);
+                        i.putExtra("Student uid",pass_word);
                         startActivity(i);
                     }
                     else{
@@ -48,6 +49,8 @@ public class LoginPage extends AppCompatActivity {
                }
             }
         });
+
+
 
 
     }

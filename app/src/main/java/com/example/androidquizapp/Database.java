@@ -26,9 +26,9 @@ public class Database extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS student;");
-        onCreate(db);
+
         db.execSQL("DROP TABLE IF EXISTS Questions;");
-        onCreate(db);
+
         db.execSQL("DROP TABLE IF EXISTS QuizResult;");
         onCreate(db);
     }
@@ -95,7 +95,7 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public Cursor GetSpecificQuestion(String chapter){
-        SQLiteDatabase db=getReadableDatabase();
+        SQLiteDatabase db=this.getReadableDatabase();
         Cursor cursor=db.rawQuery("SELECT * FROM Questions " + "WHERE chapter = ?", new String[]{chapter});
         return cursor;
     }
