@@ -1,8 +1,10 @@
 package com.example.androidquizapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -259,10 +261,28 @@ public class QuizActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        quizTimer.purge();
-        quizTimer.cancel();
-        startActivity(new Intent(QuizActivity.this, MainActivity.class));
-        finish();
+        AlertDialog.Builder builder;
+        builder = new AlertDialog.Builder(QuizActivity.this);
+        builder.setMessage("If You Exit now you can't go back again")
+                .setCancelable(false)
+                .setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        QuizActivity.super.onBackPressed();
+                        Intent i = new Intent(QuizActivity.this,QuizResults.class);
+                        i.putExtra("correct",getCorrectAnswers());
+                        i.putExtra("incorrect",getInCorrectAnswers());
+                        i.putExtra("Student uid",student_uid);
+                        i.putExtra("Selected topic",getSelectedTopicName);
+                        startActivity(i);
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alertDialog=builder.create();
+        alertDialog.show();
     }
     private void revealAnswer(){
         final String getAnswer = questionsLists.get(currentQuestionPosition).getAnswer();
@@ -284,4 +304,6 @@ public class QuizActivity extends AppCompatActivity {
             option4.setTextColor(Color.WHITE);
         }
     }
+
+
 }
