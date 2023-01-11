@@ -125,12 +125,12 @@ public Integer checkQuestion(String question){
         int topic1=cursor.getColumnIndex("topic");
         int result1=cursor.getColumnIndex("result");
 
-        String res="";
+        String res="Student UID       Chapter   QUIZ RESULT\n";
         for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()){
             res=res+
-                    "Student UID  "+cursor.getString(Student_uid1)+"\n"+
-                    "    Chapter  "+cursor.getString(topic1)+"\n"+
-                    "QUIZ RESULT"+cursor.getString(result1)+"\n\n";
+                    ""+cursor.getString(Student_uid1)+"            "+
+                    ""+cursor.getString(topic1)+"                  "+
+                    ""+cursor.getString(result1)+"\n\n";
         }
         db.close();
         return res;

@@ -105,9 +105,6 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("Student uid",student_uid);
                         startActivity(intent);
                     }
-
-
-
                 }
             }
         });

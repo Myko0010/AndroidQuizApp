@@ -20,18 +20,16 @@ public class QuizResults extends AppCompatActivity {
         final TextView incorrectAnswer = findViewById(R.id.incorrectAnswers);
         database=new Database(this);
 
-         int getCorrectAnswers = getIntent().getIntExtra("correct", 0);
-         int getInCorrectAnswers = getIntent().getIntExtra("incorrect", 0);
+        int getCorrectAnswers = getIntent().getIntExtra("correct", 0);
+        int getInCorrectAnswers = getIntent().getIntExtra("incorrect", 0);
         final String student_uid = getIntent().getStringExtra("Student uid");
         final String selected_topic = getIntent().getStringExtra("Selected topic");
 
+
         String getCorrectAnswers2=getCorrectAnswers+"";
-
         database.AddResult(student_uid,selected_topic,getCorrectAnswers2);
-
         correctAnswer.setText(String.valueOf(getCorrectAnswers));
         incorrectAnswer.setText(String.valueOf(getInCorrectAnswers));
-
 
         startNewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +38,6 @@ public class QuizResults extends AppCompatActivity {
                 i.putExtra("Selected topic",selected_topic);
                 i.putExtra("Student uid",student_uid);
                 startActivity(i);
-
                 finish();
             }
         });
