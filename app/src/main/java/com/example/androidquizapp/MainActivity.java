@@ -1,7 +1,9 @@
 package com.example.androidquizapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -108,5 +110,32 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+
+
+    }
+@Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder;
+        builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setMessage("If You Exit now you can't go back again")
+                .setCancelable(false)
+                .setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        MainActivity.super.onBackPressed();
+                        Intent i = new Intent(MainActivity.this,LoginPage.class);
+
+                        startActivity(i);
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alertDialog=builder.create();
+        alertDialog.show();
     }
 }
